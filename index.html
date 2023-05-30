@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <h1>CRUD Method</h1>
+
+    <body>
+
+    <section>
+        <h2>Add Products</h2>
+        <form id="create-product-form">
+            <div class="add-container">
+                <div class="add-wrapper">
+                    <div class="add-form-wrapper">
+
+                            <label for="addName">Name:</label>
+                           <input type="text" id="addName" placeholder="Name"> <br><br>
+                            <label for="addDesc">Description:</label>
+                            <input type="text" id="addDesc" placeholder="Description"> <br><br>
+                            <label for="addPrice">Price:</label>
+                           <input type="text" id="addPrice" placeholder="Price"> <br><br>
+
+                           <input type="submit" value="Submit" class="submit">
+                 </div>
+             </div>
+          </div>
+      </form>
+
+        <div class="view-added-product">
+            <div id="added-output"></div>
+        </div>
+        
+    </section>
+
+    <section>
+        <h2>Get Products</h2>
+        <form id="get-product-form">
+            <div class="get-container">
+                <div class="get-wrapper">
+                    <div class="get-form-wrapper">
+
+                            <label for="get-id">ID:</label>
+                           <input type="text" id="get-id" placeholder="ID"> <br><br>
+
+                           <button type="button" class="button">Submit</button>
+                 </div>
+             </div>
+          </div>
+      </form>
+
+        <div class="view-get-product">
+            <div id="get-output"></div>
+        </div>
+        
+    </section>
+
+    <section>
+        <h2>Update Products</h2>
+        <form id="update-product-form">
+            <div class="update-container">
+                <div class="update-wrapper">
+                    <div class="update-form-wrapper">
+
+                            <label for="updateName">Name:</label>
+                           <input type="text" id="updateName" placeholder="Name"> <br><br>
+                            <label for="updateDesc">Description:</label>
+                            <input type="text" id="updateDesc" placeholder="Description"> <br><br>
+                            <label for="updatePrice">Price:</label>
+                           <input type="text" id="updatePrice" placeholder="Price"> <br><br>
+
+                           <button type="button" class="button">Submit</button>
+                 </div>
+             </div>
+          </div>
+      </form>
+
+        <div class="view-update-product">
+            <div id="update-output"></div>
+        </div>  
+    </section>
+
+    
+</head>
+
+    
+<script src="main.js"></script>
+</body>
+</html>
