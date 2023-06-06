@@ -50,5 +50,50 @@ myForm.addEventListener('submit', function(event) {
         });
 });
 
+let getForm = document.querySelector('#get-product-form'); //get the form ID
+getForm.addEventListener('submit', function(event) {
+    event.preventDefault(); //for submit button to work
+    console.log('here')
 
-const getUrl = "http://206.189.148.20:8080/api/get/"
+    let productForm = document.querySelector('#get-id').value; //get the value of the data that was provided on the field
+    console.log(`${productForm}`)
+
+
+
+    let getUrl = `http://206.189.148.20:8080/api/get/${productForm}`; //to get the actual ID equivalent to the data that was provided on the field
+    console.log(`${getUrl}`)
+    const outputElement = document.querySelector('#get-output'); //where the output is going to show
+ 
+
+
+    fetch(getUrl)
+        .then(response => response.json())
+        .then(data => {
+        console.log(data)
+
+        outputElement.innerHTML = `
+        <div class="get-card">
+            <div class="product-id"> Product ID:
+            ${productForm}
+             </div>
+             <div class="product-name"> Product Name: 
+                   ${data.name} 
+             </div>
+               <div class="product-description"> Product Description: 
+                  ${data.description}
+                </div>
+               <div class="product-price"> Product Price: 
+                  ${data.price}
+                </div>
+            </div>
+       `; 
+
+    })
+    .catch(error => {
+      // Handle any errors that occurrßed during the request
+    //   console.log('Error', error);
+    });
+    
+    
+
+})
