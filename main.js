@@ -50,6 +50,8 @@ myForm.addEventListener('submit', function(event) {
         });
 });
 
+// code for add data ends here
+
 let getForm = document.querySelector('#get-product-form'); //get the form ID
 getForm.addEventListener('submit', function(event) {
     event.preventDefault(); //for submit button to work
@@ -95,5 +97,49 @@ getForm.addEventListener('submit', function(event) {
     });
     
     
+
+})
+
+// code for get data ends here
+
+
+const updateForm = document.querySelector('#update-product-form');
+updateForm.addEventListener('submit', function(event){
+    event.preventDefault();
+    console.log('updateForm, clicked')
+
+    function getFormValue(){
+        let id = document.getElementById('updateId').value;
+        let name = document.getElementById('updateName').value;
+        let description = document.getElementById('updateDesc').value;
+        let price = document.getElementById('updatePrice').value;
+
+        let updatedData = {
+            "id" : id,
+            "name" : name,
+            "description" : description,
+            "price" : price
+        }
+
+        return updatedData
+    };
+
+    let updatedId = document.querySelector('#updateId').value;
+    let updatedUrl = `http://206.189.148.20:8080/api/update/${updatedId}`
+
+    fetch(updatedUrl, {
+        method: 'PUT',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(getFormValue())
+    })
+    
+    .then(response => response.json())
+    .then(data => {
+        console.log('Response', data);
+
+
+})
 
 })
