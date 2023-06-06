@@ -73,6 +73,7 @@ getForm.addEventListener('submit', function(event) {
         .then(data => {
         console.log(data)
 
+       if ( data.hasOwnProperty("name") && data.hasOwnProperty("price") && data.hasOwnProperty("_id") && data.hasOwnProperty("description") ) {
         outputElement.innerHTML = `
         <div class="get-card">
             <div class="product-id"> Product ID:
@@ -89,6 +90,14 @@ getForm.addEventListener('submit', function(event) {
                 </div>
             </div>
        `; 
+       } else (
+        outputElement.innerHTML = `
+        <div class="deleted-card">
+            <div class="deleted-name">
+            <h3>${data.message}</h3>
+            </div>
+        </div>`
+       )
 
     })
     .catch(error => {
@@ -143,3 +152,33 @@ updateForm.addEventListener('submit', function(event){
 })
 
 })
+
+// code for update data ends here
+function deletedData() {
+
+    let deletedId = document.querySelector('#deleteId').value;
+    let deletedUrl = `http://206.189.148.20:8080/api/delete/${deletedId}`;
+
+    fetch(deletedUrl, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Data deleted successfully!');
+        } else {
+            console.error('Failed to delete data.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+const delDataForm = document.querySelector('#delete-product-form');
+delDataForm.addEventListener('submit', function(event){
+    event.preventDefault();
+    deletedData(`${alert('Data was deleted successfully!')}`);
+});
