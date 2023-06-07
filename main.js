@@ -182,3 +182,101 @@ delDataForm.addEventListener('submit', function(event){
     event.preventDefault();
     deletedData(`${alert('Data was deleted successfully!')}`);
 });
+
+// code for delete data ends here
+
+const getAllData = 'http://206.189.148.20:8080/api/get';
+
+// fetch(getAllData)
+//     .then(response => response.json())
+//     .then(data => {
+//         const getAll = document.querySelector('.get-all-products');
+
+//         data.forEach(product => {
+//             const productCard = document.createElement('div');
+//              productCard.className = 'product-card';
+
+//              const productBody = document.createElement('div');
+//              productBody.className = 'product-body';
+
+//              const productName = document.createElement('div')
+//              productName.className = 'product-name'
+
+//              const productDescription = document.createElement('div');
+//              productDescription.className = 'product-description';
+//              productDescription.textContent = product.description;
+
+//              const productPrice = document.createElement('div');
+//              productPrice.className = 'product-price';
+//              productPrice.textContent = `$${product.price}`;
+
+//              productBody.appendChild(productName);
+//              productBody.appendChild(productDescription);
+//              productBody.appendChild(productPrice);
+//              productCard.appendChild(productBody);
+//              productCard.appendChild(addToCart);
+
+//              getAll.appendChild(productCard);
+//         })
+//     })
+
+//     .catch(error => {
+//         console.error('Error fetching product data', error);
+//     });
+
+
+
+const myButton = document.getElementById('myButton');
+
+function handleClick() {
+  console.log('Button clicked!');
+  
+  const getAllData = 'http://206.189.148.20:8080/api/get';
+
+fetch(getAllData)
+    .then(response => response.json())
+    .then(data => {
+        const getAll = document.querySelector('.get-all-products');
+
+        data.forEach(product => {
+            const productCard = document.createElement('div');
+             productCard.className = 'product-card';
+
+             const productBody = document.createElement('div');
+             productBody.className = 'product-body';
+
+             const productId = document.createElement('div');
+             productId.className = 'productId';
+             productId.textContent = `Transaction ID: ${product._id}`;
+             console.log(`${product._id}`);
+
+             const productName = document.createElement('div')
+             productName.className = 'product-name'
+             productName.textContent = `Name: ${product.name}`;
+
+             const productDescription = document.createElement('div');
+             productDescription.className = 'product-description';
+             productDescription.textContent = `Description: ${product.description}`;
+
+             const productPrice = document.createElement('div');
+             productPrice.className = 'product-price';
+             productPrice.textContent = `Price: $${product.price}`;
+
+             productBody.appendChild(productId);
+             productBody.appendChild(productName);
+             productBody.appendChild(productDescription);
+             productBody.appendChild(productPrice);
+             productCard.appendChild(productBody);
+
+
+             getAll.appendChild(productCard);
+        })
+    })
+
+    .catch(error => {
+        console.error('Error fetching product data', error);
+    });
+
+}
+
+myButton.addEventListener('click', handleClick);
