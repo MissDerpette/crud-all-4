@@ -37,7 +37,7 @@ myForm.addEventListener('submit', function(event) {
             const {_id, created_at, description, name, price} = data;
 
             htmlOutput.innerHTML = `<div class="newly-added-data">
-                <div class="card">
+                <div class="new-card">
                      <div class="product-id">ID: ${_id}</div>
                     <div class="name">Name: ${name}</div>
                     <div class="description">Description: ${description}</div>
@@ -75,7 +75,7 @@ getForm.addEventListener('submit', function(event) {
 
        if ( data.hasOwnProperty("name") && data.hasOwnProperty("price") && data.hasOwnProperty("_id") && data.hasOwnProperty("description") ) {
         outputElement.innerHTML = `
-        <div class="get-card">
+        <div class="get-card return">
             <div class="product-id"> Product ID:
             ${productForm}
              </div>
@@ -92,7 +92,7 @@ getForm.addEventListener('submit', function(event) {
        `; 
        } else (
         outputElement.innerHTML = `
-        <div class="deleted-card">
+        <div class="deleted-card return">
             <div class="deleted-name">
             <h3>${data.message}</h3>
             </div>
@@ -192,6 +192,9 @@ const myButton = document.getElementById('myButton');
 
 function handleClick() {
   console.log('Button clicked!');
+  
+
+  //generate container div here
   
   const getAllData = 'http://206.189.148.20:8080/api/get';
 
