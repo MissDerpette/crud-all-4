@@ -187,44 +187,6 @@ delDataForm.addEventListener('submit', function(event){
 
 const getAllData = 'http://206.189.148.20:8080/api/get';
 
-// fetch(getAllData)
-//     .then(response => response.json())
-//     .then(data => {
-//         const getAll = document.querySelector('.get-all-products');
-
-//         data.forEach(product => {
-//             const productCard = document.createElement('div');
-//              productCard.className = 'product-card';
-
-//              const productBody = document.createElement('div');
-//              productBody.className = 'product-body';
-
-//              const productName = document.createElement('div')
-//              productName.className = 'product-name'
-
-//              const productDescription = document.createElement('div');
-//              productDescription.className = 'product-description';
-//              productDescription.textContent = product.description;
-
-//              const productPrice = document.createElement('div');
-//              productPrice.className = 'product-price';
-//              productPrice.textContent = `$${product.price}`;
-
-//              productBody.appendChild(productName);
-//              productBody.appendChild(productDescription);
-//              productBody.appendChild(productPrice);
-//              productCard.appendChild(productBody);
-//              productCard.appendChild(addToCart);
-
-//              getAll.appendChild(productCard);
-//         })
-//     })
-
-//     .catch(error => {
-//         console.error('Error fetching product data', error);
-//     });
-
-
 
 const myButton = document.getElementById('myButton');
 
@@ -236,7 +198,7 @@ function handleClick() {
 fetch(getAllData)
     .then(response => response.json())
     .then(data => {
-        const getAll = document.querySelector('.get-all-products');
+        const allOutput = document.querySelector('#all-output');
 
         data.forEach(product => {
             const productCard = document.createElement('div');
@@ -260,16 +222,14 @@ fetch(getAllData)
 
              const productPrice = document.createElement('div');
              productPrice.className = 'product-price';
-             productPrice.textContent = `Price: $${product.price}`;
+             productPrice.textContent = `$${product.price}`;
 
              productBody.appendChild(productId);
              productBody.appendChild(productName);
              productBody.appendChild(productDescription);
              productBody.appendChild(productPrice);
              productCard.appendChild(productBody);
-
-
-             getAll.appendChild(productCard);
+             allOutput.appendChild(productCard);
         })
     })
 
