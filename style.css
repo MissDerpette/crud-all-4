@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600;700&display=swap');
+
 body {
     background-image: -webkit-gradient(linear,left top,left bottom,color-stop(5%,#2f6ed3),color-stop(20%,#5095e4),color-stop(60%,#5095e4),color-stop(95%,#2f6ed3)); 
     padding: 10px;
     margin: 10px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .view-added-product {
@@ -49,18 +52,20 @@ body {
 .product-card {    
     /* child element of the output*/
     width: 300px;
-    margin: 0 20px;    
+    margin: 8px 20px;    
     background: rgba( 114, 13, 248, 0.35 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 11.5px );
     -webkit-backdrop-filter: blur( 11.5px );
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
   }
 
 .product-body {
-    height: 100px;
-    color: black;
-    padding: 10px;
+    height: 140px;
+    color: #B2C3FA;
+    padding: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.5em;
 }
 
