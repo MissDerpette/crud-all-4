@@ -212,7 +212,7 @@ fetch(getAllData)
 
              const productId = document.createElement('div');
              productId.className = 'productId';
-             productId.textContent = `Transaction ID: ${product._id}`;
+             productId.textContent = `Product ID: ${product._id}`;
              console.log(`${product._id}`);
 
              const productName = document.createElement('div')
