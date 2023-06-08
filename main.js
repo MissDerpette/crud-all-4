@@ -67,16 +67,15 @@ getForm.addEventListener('submit', function(event) {
     const outputElement = document.querySelector('#get-output'); //where the output is going to show
  
 
-
     fetch(getUrl)
         .then(response => response.json())
         .then(data => {
         console.log(data)
-
        if ( data.hasOwnProperty("name") && data.hasOwnProperty("price") && data.hasOwnProperty("_id") && data.hasOwnProperty("description") ) {
         outputElement.innerHTML = `
         <div class="get-card return">
-            <div class="product-id"> Product ID:
+            <div class="get-id-output">
+             <div class="product-id"> Product ID:
             ${productForm}
              </div>
              <div class="product-name"> Product Name: 
@@ -191,50 +190,50 @@ const getAllData = 'http://206.189.148.20:8080/api/get';
 const myButton = document.getElementById('myButton');
 
 function handleClick() {
-  console.log('Button clicked!');
-  
+    event.preventDefault();
 
   //generate container div here
   
   const getAllData = 'http://206.189.148.20:8080/api/get';
 
-fetch(getAllData)
-    .then(response => response.json())
-    .then(data => {
-        const allOutput = document.querySelector('#all-output');
+    fetch(getAllData)
+        .then(response => response.json())
+        .then(data => {
 
-        data.forEach(product => {
-            const productCard = document.createElement('div');
-             productCard.className = 'product-card';
-
-             const productBody = document.createElement('div');
-             productBody.className = 'product-body';
-
-             const productId = document.createElement('div');
-             productId.className = 'productId';
-             productId.textContent = `Product ID: ${product._id}`;
-             console.log(`${product._id}`);
-
-             const productName = document.createElement('div')
-             productName.className = 'product-name'
-             productName.textContent = `Name: ${product.name}`;
-
-             const productDescription = document.createElement('div');
-             productDescription.className = 'product-description';
-             productDescription.textContent = `Description: ${product.description}`;
-
-             const productPrice = document.createElement('div');
-             productPrice.className = 'product-price';
-             productPrice.textContent = `$${product.price}`;
-
-             productBody.appendChild(productId);
-             productBody.appendChild(productName);
-             productBody.appendChild(productDescription);
-             productBody.appendChild(productPrice);
-             productCard.appendChild(productBody);
-             allOutput.appendChild(productCard);
+            const allOutput = document.querySelector('#all-output');
+        
+            data.forEach(product => {
+                const productCard = document.createElement('div');
+                 productCard.className = 'product-card';
+            
+                 const productBody = document.createElement('div');
+                 productBody.className = 'product-body';
+            
+                 const productId = document.createElement('div');
+                 productId.className = 'productId';
+                 productId.textContent = `Product ID: ${product._id}`;
+                 console.log(`${product._id}`);
+            
+                 const productName = document.createElement('div')
+                 productName.className = 'product-name'
+                 productName.textContent = `Name: ${product.name}`;
+            
+                 const productDescription = document.createElement('div');
+                 productDescription.className = 'product-description';
+                 productDescription.textContent = `Description: ${product.description}`;
+            
+                 const productPrice = document.createElement('div');
+                 productPrice.className = 'product-price';
+                 productPrice.textContent = `$${product.price}`;
+            
+                 productBody.appendChild(productId);
+                 productBody.appendChild(productName);
+                 productBody.appendChild(productDescription);
+                 productBody.appendChild(productPrice);
+                 productCard.appendChild(productBody);
+                 allOutput.appendChild(productCard);
+            })
         })
-    })
 
     .catch(error => {
         console.error('Error fetching product data', error);

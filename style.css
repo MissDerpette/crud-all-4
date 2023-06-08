@@ -1,44 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600;700&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 body {
     background: #03001e;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
- 
+    background: -webkit-linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     padding: 10px;
     margin: 10px;
-    font-family: 'Quicksand', sans-serif;
+    font-family: montserrat, arial, verdana;
+    background-image: url(img/back.png), linear-gradient(to right top, #343a40, #2b2c31, #211f22, #151314, #000000);
 }
 
-.view-added-product { 
+.main-wrapper {
+    /* width: 400px; */
+    text-align: center;
+}
+.main-wrapper .submit:hover, .main-wrapper .submit:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+.add-wrapper { /* for add data form */
+    background: ghostwhite;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	/*stacking fieldsets above each other*/
+	position: relative;  
 }
 
-.newly-added-data {
-        /* this is for output of adding new product*/
-        background: rgba( 114, 13, 248, 0.35 );
-        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-        backdrop-filter: blur( 11.5px );
-        -webkit-backdrop-filter: blur( 11.5px );
-        border-radius: 10px;
-        border: 1px solid rgba( 255, 255, 255, 0.18 );
-        width: 300px;
-        height: 140px;
-        color: #B2C3FA;
-        padding: 24px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        line-height: 1.5em;
+.view-added-product { /* for output of added data */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;  
 }
 
-.return {
-    /* this is for output of Get product by Id */
+.newly-added-data {/* this is for output of adding new product*/
+
     background: rgba( 114, 13, 248, 0.35 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 11.5px );
     -webkit-backdrop-filter: blur( 11.5px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
     border-radius: 10px;
-    padding: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
     width: 300px;
     height: 140px;
     color: #B2C3FA;
@@ -46,22 +52,58 @@ background: linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e); /* W3
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 1.5em;
-
 }
 
+.get-wrapper, .get-all-wrapper, .update-wrapper, .delete-wrapper {  /* this is for get product by id form */
+    background: ghostwhite;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	/*stacking fieldsets above each other*/
+	position: relative;  
+}
 
+.return{ /* for the output of getting product by id */
+   
+    background: rgba( 114, 13, 248, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 11.5px );
+    -webkit-backdrop-filter: blur( 11.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    width: 300px;
+    height: 140px;
+    color: #B2C3FA;
+    padding: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.5em;
+}
 
+.view-get-product { /* for the output of getting product by id */
+    /* for output layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 10px;
+    
+}
 
-#all-output {
-    /* parent container of the output */
+#all-output { /* parent container of the output for get all */
     display: flex;
     gap: 10px 20px; 
     flex-flow: row wrap;
     padding: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
-.product-card {    
-    /* child element of the output*/
+.product-card {  /* child element of the output*/
     width: 300px;
     margin: 8px 20px;    
     background: rgba( 114, 13, 248, 0.35 );
@@ -71,13 +113,64 @@ background: linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e); /* W3
     border-radius: 10px;
   }
 
-.product-body {
-        /* this is for output of get all products*/
+.product-body {/* this is for output of get all products*/
     height: 140px;
     color: #B2C3FA;
     padding: 24px;
     font-weight: 600;
     letter-spacing: 1px;
     line-height: 1.5em;
+
+}
+
+.add-title, .get-title, .get-all-title, .update-title, .delete-title{
+    font-size: 15px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.form-wrapper {  /* for all sections */
+    margin: 50px;
+	text-align: center;
+	position: relative;
+}
+
+.main-wrapper input {
+    padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+
+.main-title {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    /* stacking fieldsets above each other */
+    position: relative;  
+    }
+
+.main-wrapper .submit {
+    width: 100px;
+	background: #27AE60;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px;
+	margin: 10px 5px;
+    text-decoration: none;
+    font-size: 14px;
 }
 

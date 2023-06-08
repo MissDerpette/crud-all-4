@@ -1,131 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <h1>CRUD Method</h1>
 
-    <body>
+<body>
 
-    <section class="add-data">
-        <h2>Add Products</h2>
-        <form id="create-product-form">
-            <div class="add-container">
-                <div class="add-wrapper">
-                    <div class="add-form-wrapper">
+    <div class="main-wrapper">
+        <h1 class="main-title">CRUD Method</h1>
 
-                            <label for="addName">Name:</label>
-                           <input type="text" id="addName" placeholder="Name"> <br><br>
-                            <label for="addDesc">Description:</label>
-                            <input type="text" id="addDesc" placeholder="Description"> <br><br>
-                            <label for="addPrice">Price:</label>
-                           <input type="text" id="addPrice" placeholder="Price"> <br><br>
+        <section class="add-data">
+            <form id="create-product-form" class="form-wrapper">
+                <div class="add-container">
+                    <div class="add-wrapper">
+                        <h2 class="add-title">Add Product</h2>
+                        <div class="add-form-wrapper">
 
-                           <input type="submit" value="Submit" class="submit">
-                 </div>
-             </div>
-          </div>
-      </form>
-      <br><br>
-        <div class="view-added-product">
-            <div id="added-output"></div>
-        </div>
-        
-    </section>
+                            <label for="addName"></label>
+                            <input type="text" id="addName" placeholder="Name">
+                            <label for="addDesc"></label>
+                            <input type="text" id="addDesc" placeholder="Description">
+                            <label for="addPrice"></label>
+                            <input type="text" id="addPrice" placeholder="Price">
 
-    <section class="get-product-by-id">
-        <h2>Get Product by ID</h2>
-        <form id="get-product-form">
-            <div class="get-container">
-                <div class="get-wrapper">
-                    <div class="get-form-wrapper">
-
-                            <label for="getid">ID:</label>
-                           <input type="text" id="get-id" placeholder="ID"> <br><br>
-
-                           <input type="submit" value="Submit" class="submit"> <br><br>
-
-
-                           <div class="view-get-product">
-                            <div id="get-output"></div>
+                            <input type="submit" value="Submit" class="submit">
                         </div>
-
-                 </div>
-             </div>
-          </div>
-      </form>
-
-       
-        
-    </section>
-
-    <section class="get-all-products">
-        <h2>Get All Products</h2>
-
-        <div class="view-all-product"></div>
-        <button id="myButton">Submit</button> <br><br>
-
-         <div id="all-output"></div>
-    </section>
-
-    <section class="update-product">
-        <h2>Update Products</h2>
-        <form id="update-product-form">
-            <div class="update-container">
-                <div class="update-wrapper">
-                    <div class="update-form-wrapper">
-
-                            <label for="updateId">ID:</label>
-                            <input type="text" id="updateId" placeholder="ID"> <br><br>
-                            <label for="updateName">Name:</label>
-                           <input type="text" id="updateName" placeholder="Name"> <br><br>
-                            <label for="updateDesc">Description:</label>
-                            <input type="text" id="updateDesc" placeholder="Description"> <br><br>
-                            <label for="updatePrice">Price:</label>
-                           <input type="text" id="updatePrice" placeholder="Price"> <br><br>
-
-                           <input type="submit" value="Submit" class="submit"> <br><br>
-
-                           <div class="view-update-product">
-                            <div id="update-output"></div>
-                            </div> 
-                 </div>
-             </div>
-          </div>
-      </form>
-
-       
-    </section>
-
-    <div class="section delete-product-by-id">
-        <h2>Delete Products</h2>
-        <form id="delete-product-form">
-            <div class="delete-container">
-                <div class="delete-wrapper">
-                    <div class="delete-form-wrapper">
-
-                        <label for="deleteId">ID:</label>
-                        <input type="text" id="deleteId" placeholder="ID"> <br><br>
-
-                        <input type="submit" value="Submit" class="submit"> <br><br>
-
-                        <div class="view-deleted-product">
-                         <div id="deleted-output"></div>
-
-
                     </div>
                 </div>
+            </form>
+            <div class="view-added-product">
+                <div id="added-output"></div>
             </div>
-        </form>
+
+        </section>
+
+        <section class="get-product-by-id">
+            <form id="get-product-form" class="form-wrapper">
+                <div class="get-container">
+                    <div class="get-wrapper">
+                        <h2 class="get-title">Get Product by ID</h2>
+                        <div class="get-form-wrapper ">
+
+                            <label for="getid"></label>
+                            <input type="text" id="get-id" placeholder="ID">
+
+                            <input type="submit" value="Submit" class="submit">
+                        </div>
+                    </div>
+                </div>          
+            </form>
+            <div class="view-get-product">
+                <div id="get-output"></div>
+            </div>
+        </section>
+
+        <section class="get-all-products">
+            <form id="get-all-container" class="form-wrapper">
+                <div class="get-all-container">
+                    <div class="get-all-wrapper">
+                         <div class="view-all-product">
+                                    <h2 class="get-all-title">Get All Products</h2>     
+                                    <input type="submit" id="myButton" class="submit"><br><br>
+                         </div>
+                 </div>
+            </div>
+            </form> 
+                   <div id="all-output"></div>
+        </section>
+
+        <section class="update-product">
+            <form id="update-product-form" class="form-wrapper">
+                <div class="update-container">
+                    <div class="update-wrapper">
+                        <h2 class="update-title">Update Product</h2>
+                        <div class="update-form-wrapper">
+
+                            <label for="updateId"></label>
+                            <input type="text" id="updateId" placeholder="ID">
+                            <label for="updateName"></label>
+                            <input type="text" id="updateName" placeholder="Name">
+                            <label for="updateDesc"></label>
+                            <input type="text" id="updateDesc" placeholder="Description">
+                            <label for="updatePrice"></label>
+                            <input type="text" id="updatePrice" placeholder="Price">
+
+                            <input type="submit" value="Submit" class="submit"> <br><br>
+
+                            <div class="view-update-product">
+                                <div id="update-output"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+        </section>
+
+        <div class="section delete-product-by-id">
+            <form id="delete-product-form" class="form-wrapper">
+                <div class="delete-container">
+                    <div class="delete-wrapper">
+                        <h2 class="delete-title">Delete Product</h2>
+                        <div class="delete-form-wrapper">
+
+                            <label for="deleteId"></label>
+                            <input type="text" id="deleteId" placeholder="ID">
+
+                            <input type="submit" value="Submit" class="submit">
+
+                            <div class="view-deleted-product">
+                                <div id="deleted-output"></div>
+
+
+                            </div>
+                        </div>
+                    </div>
+            </form>
+        </div>
+
+
+
+
+        </head>
     </div>
+</div>
 
-    
-</head>
-
-    
-<script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
