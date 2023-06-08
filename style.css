@@ -1,33 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;600;700&display=swap');
 
 body {
-    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(5%,#2f6ed3),color-stop(20%,#5095e4),color-stop(60%,#5095e4),color-stop(95%,#2f6ed3)); 
+    background: #03001e;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
     padding: 10px;
     margin: 10px;
     font-family: 'Quicksand', sans-serif;
 }
 
-.view-added-product {
-    background: rgba( 114, 13, 248, 0.35 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 11.5px );
-    -webkit-backdrop-filter: blur( 11.5px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    width: 300px;
+.view-added-product { 
 }
 
 .newly-added-data {
-    height: 140px;
-    color: #B2C3FA;
-    padding: 24px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    line-height: 1.5em;
-    
+        /* this is for output of adding new product*/
+        background: rgba( 114, 13, 248, 0.35 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 11.5px );
+        -webkit-backdrop-filter: blur( 11.5px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+        width: 300px;
+        height: 140px;
+        color: #B2C3FA;
+        padding: 24px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 1.5em;
 }
 
 .return {
+    /* this is for output of Get product by Id */
     background: rgba( 114, 13, 248, 0.35 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 11.5px );
@@ -46,9 +50,7 @@ body {
 }
 
 
-.view-all-product{
-    background-color: red;
-}
+
 
 #all-output {
     /* parent container of the output */
@@ -70,6 +72,7 @@ body {
   }
 
 .product-body {
+        /* this is for output of get all products*/
     height: 140px;
     color: #B2C3FA;
     padding: 24px;
