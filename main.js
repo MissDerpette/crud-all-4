@@ -200,6 +200,7 @@ function handleClick() {
         .then(response => response.json())
         .then(data => {
 
+            alert(data)
             const allOutput = document.querySelector('#all-output');
         
             data.forEach(product => {
