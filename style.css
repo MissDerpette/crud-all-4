@@ -8,28 +8,21 @@ body {
     margin: 10px;
     font-family: montserrat, arial, verdana;
     background-image: url(img/back.png), linear-gradient(to right top, #343a40, #2b2c31, #211f22, #151314, #000000);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .main-wrapper {
     /* width: 400px; */
     text-align: center;
+    height: 100%;
+
 }
 .main-wrapper .submit:hover, .main-wrapper .submit:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #9370db;
+    border-radius: 5px;
 }
-.add-wrapper { /* for add data form */
-    background: ghostwhite;
-	border: 0 none;
-	border-radius: 3px;
-	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-	padding: 20px 30px;
-	box-sizing: border-box;
-	width: 80%;
-	margin: 0 10%;
-	/*stacking fieldsets above each other*/
-	position: relative;  
-}
-
 .view-added-product { /* for output of added data */
     display: flex;
     justify-content: center;
@@ -54,8 +47,8 @@ body {
     line-height: 1.5em;
 }
 
-.get-wrapper, .get-all-wrapper, .update-wrapper, .delete-wrapper {  /* this is for get product by id form */
-    background: ghostwhite;
+.main-title, .add-wrapper, .get-wrapper, .get-all-wrapper, .update-wrapper, .delete-wrapper {  /* this is for get product by id form */
+    background:  rgba( 114, 13, 248, 0.35 );
 	border: 0 none;
 	border-radius: 3px;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
@@ -64,7 +57,8 @@ body {
 	width: 80%;
 	margin: 0 10%;
 	/*stacking fieldsets above each other*/
-	position: relative;  
+	position: relative;
+    color: whitesmoke;  
 }
 
 .return{ /* for the output of getting product by id */
@@ -146,31 +140,18 @@ body {
 	color: #2C3E50;
 	font-size: 13px;
 }
-
-.main-title {
-    background: white;
-    border: 0 none;
-    border-radius: 3px;
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-    padding: 20px 30px;
-    box-sizing: border-box;
-    width: 80%;
-    margin: 0 10%;
-    /* stacking fieldsets above each other */
-    position: relative;  
-    }
-
 .main-wrapper .submit {
     width: 100px;
-	background: #27AE60;
+	background: #9966cc;
 	font-weight: bold;
 	color: white;
 	border: 0 none;
-	border-radius: 1px;
+	border-radius: 5px;
 	cursor: pointer;
 	padding: 10px;
 	margin: 10px 5px;
     text-decoration: none;
     font-size: 14px;
+    
 }
 
