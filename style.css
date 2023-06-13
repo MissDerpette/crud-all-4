@@ -30,7 +30,7 @@ body {
     padding: 0px;  
 }
 
-.newly-added-data {/* this is for output of adding new product*/
+.newly-added-data, .deleted-response-container {/* this is for output of adding new product*/
 
     background: rgba( 114, 13, 248, 0.35 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -78,7 +78,7 @@ body {
     line-height: 1.5em;
 }
 
-.view-get-product { /* for the output of getting product by id */
+.view-get-product, .get-deleted-response { /* for the output of getting product by id */
     /* for output layout */
     display: flex;
     justify-content: center;

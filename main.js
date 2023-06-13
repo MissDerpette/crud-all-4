@@ -153,10 +153,14 @@ updateForm.addEventListener('submit', function(event){
 })
 
 // code for update data ends here
+
+
+
 function deletedData() {
 
     let deletedId = document.querySelector('#deleteId').value;
     let deletedUrl = `http://206.189.148.20:8080/api/delete/${deletedId}`;
+    let deletedMsg = document.querySelector('#deleted-output');
 
     fetch(deletedUrl, {
         method: 'DELETE',
@@ -164,13 +168,17 @@ function deletedData() {
             'Content-Type': 'application/json',
         },
     })
-    .then(response => {
-        if (response.ok) {
-            console.log('Data deleted successfully!');
-        } else {
-            console.error('Failed to delete data.');
-        }
-    })
+    .then(response => response.json())
+    .then(data => {
+        // alert(data.status)
+        // deletedMsg.innerHTML = data.status
+        deletedMsg.innerHTML = `<div class="get-deleted-response">
+             <div class="deleted-response-container">
+                  ${data.status}
+             </div> 
+         </div>`
+    }) 
+
     .catch(error => {
         console.error('Error:', error);
     });
@@ -179,7 +187,7 @@ function deletedData() {
 const delDataForm = document.querySelector('#delete-product-form');
 delDataForm.addEventListener('submit', function(event){
     event.preventDefault();
-    deletedData(`${alert('Data was deleted successfully!')}`);
+    deletedData();
 });
 
 // code for delete data ends here
