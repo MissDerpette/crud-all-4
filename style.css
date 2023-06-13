@@ -93,10 +93,17 @@ body {
     flex-flow: row wrap;
     padding: 10px;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     overflow-x: hidden;
-   
+    margin: 24px 0;
 }
+
+.show {
+    overflow: scroll;
+    overflow-x: hidden; 
+     height: 300px;
+     padding: 24px;
+ }
 
 .product-card {  /* child element of the output*/
     width: 300px;
@@ -153,8 +160,5 @@ body {
 	margin: 10px 5px;
     text-decoration: none;
     font-size: 14px;
-    
-}
-.all-output-container {
     
 }

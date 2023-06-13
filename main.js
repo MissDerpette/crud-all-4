@@ -207,9 +207,7 @@ function handleClick() {
 
 
   let contentElement = document.getElementById('all-output');
-  contentElement.style.overflow = 'scroll'; // Show the scrollbar
-  contentElement.style.overflowX = 'hidden'; 
-  contentElement.style.height = '200px';
+  contentElement.classList.toggle('show')
    // Adjust the height if necessary
   
   const getAllData = 'http://206.189.148.20:8080/api/get';
