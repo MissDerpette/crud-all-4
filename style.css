@@ -27,7 +27,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0px;  
+    padding: 0px; 
 }
 
 .newly-added-data, .deleted-response-container, .updated-data-container{/* this is for output of adding new product*/
@@ -84,17 +84,18 @@ body {
     justify-content: center;
     align-items: center;
     padding: 0px;
-    margin: 10px;
-    
+    margin: 10px; 
 }
 
 #all-output { /* parent container of the output for get all */
     display: flex;
     gap: 10px 20px; 
     flex-flow: row wrap;
-    padding: 30px;
+    padding: 10px;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
+   
 }
 
 .product-card {  /* child element of the output*/
@@ -154,4 +155,6 @@ body {
     font-size: 14px;
     
 }
-
+.all-output-container {
+    
+}

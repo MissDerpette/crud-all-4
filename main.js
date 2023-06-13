@@ -32,7 +32,7 @@ myForm.addEventListener('submit', function(event) {
     })
         .then(response => response.json())
         .then(data => {
-            console.log('Response', data);
+
 
             const {_id, created_at, description, name, price} = data;
 
@@ -52,25 +52,20 @@ myForm.addEventListener('submit', function(event) {
 
 // code for add data ends here
 
+const outputElement = document.querySelector('#get-output'); //where the output is going to show
 let getForm = document.querySelector('#get-product-form'); //get the form ID
 getForm.addEventListener('submit', function(event) {
     event.preventDefault(); //for submit button to work
-    console.log('here')
-
+    
     let productForm = document.querySelector('#get-id').value; //get the value of the data that was provided on the field
-    console.log(`${productForm}`)
-
-
 
     let getUrl = `http://206.189.148.20:8080/api/get/${productForm}`; //to get the actual ID equivalent to the data that was provided on the field
-    console.log(`${getUrl}`)
-    const outputElement = document.querySelector('#get-output'); //where the output is going to show
- 
+  
 
     fetch(getUrl)
         .then(response => response.json())
         .then(data => {
-        console.log(data)
+    
        if ( data.hasOwnProperty("name") && data.hasOwnProperty("price") && data.hasOwnProperty("_id") && data.hasOwnProperty("description") ) {
         outputElement.innerHTML = `
         <div class="get-card return">
@@ -210,7 +205,12 @@ const myButton = document.getElementById('myButton');
 function handleClick() {
     event.preventDefault();
 
-  //generate container div here
+
+  let contentElement = document.getElementById('all-output');
+  contentElement.style.overflow = 'scroll'; // Show the scrollbar
+  contentElement.style.overflowX = 'hidden'; 
+  contentElement.style.height = '200px';
+   // Adjust the height if necessary
   
   const getAllData = 'http://206.189.148.20:8080/api/get';
 
@@ -218,7 +218,6 @@ function handleClick() {
         .then(response => response.json())
         .then(data => {
 
-            alert(data)
             const allOutput = document.querySelector('#all-output');
         
             data.forEach(product => {
