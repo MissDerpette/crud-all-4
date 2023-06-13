@@ -134,6 +134,8 @@ updateForm.addEventListener('submit', function(event){
 
     let updatedId = document.querySelector('#updateId').value;
     let updatedUrl = `http://206.189.148.20:8080/api/update/${updatedId}`
+    let updatedData = document.querySelector('#update-output');
+
 
     fetch(updatedUrl, {
         method: 'PUT',
@@ -142,10 +144,18 @@ updateForm.addEventListener('submit', function(event){
         },
         body: JSON.stringify(getFormValue())
     })
-    
     .then(response => response.json())
-    .then(data => {
-        console.log('Response', data);
+    .then(data => { console.log(data)
+        updatedData.innerHTML = `<div class="updated-data-response">
+             <div class="updated-data-container">
+                  
+                   ${data} 
+                  
+                  ${data}
+                
+                  ${data}
+             </div>
+        </div>`
 
 
 })
